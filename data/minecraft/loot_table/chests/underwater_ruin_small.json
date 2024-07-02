@@ -2,28 +2,51 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": {
-        "type": "minecraft:uniform",
-        "min": 2,
-        "max": 8
-      },
-      "bonus_rolls": 0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:coal",
-          "weight": 10,
+          "name": "minecraft:map",
+          "weight": 1,
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 4
-              },
-              "add": false
+              "function": "minecraft:exploration_map",
+              "destination": "minecraft:on_ocean_explorer_maps",
+              "decoration": "monument"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "filled_map.monument"
+              }
             }
           ]
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:coal",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -41,25 +64,29 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:wheat",
-          "weight": 10,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
+                "max": 3.0,
+                "min": 2.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             }
-          ]
+          ],
+          "name": "minecraft:wheat",
+          "weight": 10
         }
-      ]
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 8.0,
+        "min": 2.0
+      }
     },
     {
-      "rolls": 1,
-      "bonus_rolls": 0,
+      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
@@ -71,58 +98,37 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:fishing_rod",
-          "weight": 5,
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
               "options": "#minecraft:on_random_loot"
             }
-          ]
+          ],
+          "name": "minecraft:fishing_rod",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:map",
-          "weight": 5,
           "functions": [
             {
+              "decoration": "minecraft:red_x",
               "function": "minecraft:exploration_map",
-              "destination": "minecraft:on_treasure_maps",
-              "decoration": "red_x",
-              "zoom": 1,
-              "skip_existing_chunks": false
+              "skip_existing_chunks": false,
+              "zoom": 1
             },
             {
               "function": "minecraft:set_name",
-              "target": "item_name",
               "name": {
                 "translate": "filled_map.buried_treasure"
-              }
+              },
+              "target": "item_name"
             }
-          ]
-        },
-        {
-          "type": "minecraft:item",
+          ],
           "name": "minecraft:map",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:exploration_map",
-              "destination": "minecraft:on_woodland_explorer_maps",
-              "decoration": "mansion",
-              "zoom": 1,
-              "skip_existing_chunks": false
-            },
-            {
-              "function": "minecraft:set_name",
-              "target": "item_name",
-              "name": {
-                "translate": "filled_map.mansion"
-              }
-            }
-          ]
+          "weight": 5
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "minecraft:chests/underwater_ruin_small"
