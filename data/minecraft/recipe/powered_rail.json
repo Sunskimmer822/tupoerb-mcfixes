@@ -1,23 +1,24 @@
 {
     "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "c c",
-        "c/c",
-        "cRc"
-    ],
+    "category": "misc",
     "key": {
-        "c": {
-            "item": "minecraft:copper_ingot"
-        },
-        "/": {
-            "item": "minecraft:stick"
-        },
-        "R": {
-            "item": "minecraft:redstone"
-        }
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "R": {
+        "item": "minecraft:redstone"
+      },
+      "X": {
+        "item": "minecraft:copper_ingot"
+      }
     },
+    "pattern": [
+      "X X",
+      "X#X",
+      "XRX"
+    ],
     "result": {
-        "item": "minecraft:powered_rail",
-        "count": 1
+      "count": 6,
+      "id": "minecraft:powered_rail"
     }
-}
+  }
