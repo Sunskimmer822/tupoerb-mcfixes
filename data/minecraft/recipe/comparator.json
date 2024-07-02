@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#A#",
+        "SSS"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:redstone_torch"
+        },
+        "A": {
+            "item": "minecraft:amethyst_shard"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        }
+    },
+    "result": {
+        "item": "minecraft:comparator",
+        "count": 1
+    }
+}
